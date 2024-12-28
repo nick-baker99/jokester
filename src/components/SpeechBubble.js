@@ -1,13 +1,12 @@
 import React from 'react'
 
-const SpeechBubble = ({ title, subTitle, speechText, buttonText }) => {
+const SpeechBubble = ({ speechText }) => {
   return (
     <div className="speech-bubble">
       <div className="inner">
-        <h1 className="title">{title}</h1>
-        {subTitle && <h2 className="sub-title">Your Ultimate Source for Laughter</h2>}
-        <p className="speech-text" dangerouslySetInnerHTML={{ __html: speechText }}></p>
-        {buttonText && <button className="speech-btn">{buttonText}</button>}
+        <h1 className="title">Here's your joke</h1>
+        <h2 className="sub-title">Prepare to be amused!</h2>
+        <p className="speech-text">{speechText}</p>
       </div>
     </div>
   )

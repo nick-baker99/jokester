@@ -69,6 +69,8 @@ header .logo {
   border-radius: 12px;
   padding: 2rem 0;
   position: relative;
+  max-width: 800px;
+  width: 90%;
 }
 .speech-bubble::after {
   content: "";
