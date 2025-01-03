@@ -31,6 +31,7 @@ function App() {
     if (jokes.length > 0) {
       const randomIndex = Math.floor(Math.random() * jokes.length);
       setRandomJoke(jokes[randomIndex]); // Update the random joke
+      setFeedback(null);
     }
   }
 
@@ -41,16 +42,21 @@ function App() {
         {randomJoke ? (
           <>
             <SpeechBubble speechText={randomJoke.Joke} />
-            <button className="generate-btn" onClick={fetchJoke}>
+            <button className="generate-btn" onClick={fetchJoke} title="generate">
               <img src="images/sync.png" alt="re-generate icon" />
               New Joke
             </button>
             <div className="feedback">
               <h3>So what did you think?</h3>
-              <div className="feedback-btns">
-                <FeedbackButton type="like" feedback={feedback} setFeedback={setFeedback} />
-                <FeedbackButton type="dislike" feedback={feedback} setFeedback={setFeedback} />
-              </div>
+              {!feedback ? (
+                <div className="feedback-btns">
+                  <FeedbackButton type="like" feedback={feedback} setFeedback={setFeedback} />
+                  <FeedbackButton type="dislike" feedback={feedback} setFeedback={setFeedback} />
+                </div>
+              ) : (
+                <p>Thanks for sharing your feedback!</p>
+              )}
+              
             </div>
           </>
         ) : (
