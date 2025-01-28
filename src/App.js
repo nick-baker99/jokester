@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header setRandomJoke={setRandomJoke} />
       <div className="content">
         {randomJoke ? (
           <>

@@ -21,6 +21,7 @@ body {
 button {
   border: none;
   cursor: pointer;
+  background: none;
 }
 
 header {

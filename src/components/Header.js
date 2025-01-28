@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({ setRandomJoke }) => {
   return (
     <header>
       <div className="header-wrapper">
-        <div className="logo">
+        <button className="logo" onClick={() => setRandomJoke(null)}>
           <img src="images/smile_emoji_jester_small.png" alt="wink icon" />
           Jokester
-        </div>
+        </button>
       </div>
     </header>
   )
